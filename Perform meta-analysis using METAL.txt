@@ -1,0 +1,48 @@
+#### Perform meta-analysis using METAL ####
+# For Mean Thickness as an example
+
+#!/bin/bash
+module load metal
+cd /users/k21043376/meta-analysis/cortical_ewas
+metal METAL_MeanThickness_Bacon_corrected_noICV_EPIC.txt
+
+# Below is the METAL_MeanThickness_Bacon_corrected_noICV_EPIC.txt
+# Selecting an analysis scheme
+# Default approach, uses p-value and direction of effect, weighted according to sample size
+SCHEME SAMPLESIZE 
+
+# Genomic control correction
+# OFF is the default, no adjustment to test statistics
+# Consider genomic control correction only when the input files have whole genome data
+# GENOMICCONTROL OFF
+
+# Verbose mode
+VERBOSE OFF
+
+# To help identify allele flips, it can be useful to track
+# allele frequencies in the meta-analysis.
+# AVERAGEFREQ ON
+# MINMAXFREQ ON
+
+MARKER	CpG
+EFFECT	MeanThickness_beta
+STDERR	MeanThickness_SE 
+PVALUE	MeanThickness_P
+WEIGHT	MeanThickness_N
+
+PROCESS ADNI_noICV_Bacon_corrected_sumstats.txt
+PROCESS DBIS_noICV_Bacon_corrected_sumstats.txt
+PROCESS FOR2107Marburg_noICV_Bacon_corrected_sumstats.txt
+PROCESS FOR2107Munster_noICV_Bacon_corrected_sumstats.txt
+PROCESS MCIC_noICV_Bacon_corrected_sumstats.txt
+PROCESS SHIPTREND_noICV_Bacon_corrected_sumstats.txt
+PROCESS IMAGEN_FU2_noICV_Bacon_corrected_sumstats.txt
+PROCESS ESTRA_noICV_Bacon_corrected_sumstats.txt
+PROCESS PPMI_noICV_Bacon_corrected_sumstats.txt
+PROCESS STRATIFY_noICV_Bacon_corrected_sumstats.txt
+
+# Edit output name
+OUTFILE METAANALYSIS_MeanThickness_noICV_Bacon_corrected_EPIC_ .tbl
+
+# To allow for heterogeneity
+ANALYZE HETEROGENEITY
