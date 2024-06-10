@@ -78,7 +78,7 @@ processData <- function(is_epic_array = FALSE) {
 # for 450k cohorts
 load("~/Library/CloudStorage/OneDrive-King'sCollegeLondon/ENIGMA-Epigenetics2/BIPSYD/Output_of_CTAAC_EWAS_with_CorticalMeasures_noICV.RData")
 results1 <- processData(is_epic_array = FALSE)
-results2 <- processBACON(results1, "CTAAC")
+processBACON(results1, "CTAAC")
 
 # for EPIC cohorts
 load("~/Library/CloudStorage/OneDrive-King'sCollegeLondon/ENIGMA-Epigenetics2/BIPSYD/Output_of_IMAGEN_FU2_EWAS_with_CorticalMeasures_noICV.RData")
