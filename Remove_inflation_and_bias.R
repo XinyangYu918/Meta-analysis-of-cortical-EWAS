@@ -83,4 +83,4 @@ results2 <- processBACON(results1, "CTAAC")
 # for EPIC cohorts
 load("~/Library/CloudStorage/OneDrive-King'sCollegeLondon/ENIGMA-Epigenetics2/BIPSYD/Output_of_IMAGEN_FU2_EWAS_with_CorticalMeasures_noICV.RData")
 results1 <- processData(is_epic_array = TRUE)
-results2 <- processBACON(results1, "IMAGEN_FU2")
+processBACON(results1, "IMAGEN_FU2")
