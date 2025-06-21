@@ -1,2 +1,4 @@
-# meta-analysis-of-brain-EWAS
-The following codes were written to perform EWAS analysis of cortical measures, i.e., cortical thickness and surface area.
+# Meta-analysis-of-brain-EWAS
+The following code was written to perform an epigenome-wide association study (EWAS) of cortical measures, specifically cortical thickness and surface area.
+
+
